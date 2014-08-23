@@ -1,0 +1,138 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-08-23 00:44+0800\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Elements/navigation.ctp:36
+msgid "Input Fields"
+msgstr ""
+
+#: /Elements/navigation.ctp:50
+msgid "DataTables"
+msgstr ""
+
+#: /NewsEvents/add.ctp:4
+msgid "Add News Event"
+msgstr ""
+
+#: /NewsEvents/add.ctp:14
+#: /NewsEvents/admin_edit.ctp:143
+#: /NewsEvents/edit.ctp:15
+msgid "Submit"
+msgstr ""
+
+#: /NewsEvents/add.ctp:17
+#: /NewsEvents/edit.ctp:18
+#: /NewsEvents/index.ctp:13;50
+#: /NewsEvents/view.ctp:42
+msgid "Actions"
+msgstr ""
+
+#: /NewsEvents/add.ctp:20
+#: /NewsEvents/edit.ctp:22
+#: /NewsEvents/view.ctp:46
+msgid "List News Events"
+msgstr ""
+
+#: /NewsEvents/admin_index.ctp:2
+#: /NewsEvents/admin_view.ctp:2
+#: /Tables/admin_index.ctp:2
+msgid "TIN TỨC"
+msgstr ""
+
+#: /NewsEvents/admin_index.ctp:11
+msgid "Posts"
+msgstr ""
+
+#: /NewsEvents/edit.ctp:4
+#: /NewsEvents/view.ctp:44
+msgid "Edit News Event"
+msgstr ""
+
+#: /NewsEvents/edit.ctp:21
+#: /NewsEvents/index.ctp:29
+msgid "Delete"
+msgstr ""
+
+#: /NewsEvents/edit.ctp:21
+#: /NewsEvents/index.ctp:29
+#: /NewsEvents/view.ctp:45
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: /NewsEvents/index.ctp:2
+msgid "News Events"
+msgstr ""
+
+#: /NewsEvents/index.ctp:27
+msgid "View"
+msgstr ""
+
+#: /NewsEvents/index.ctp:28
+msgid "Edit"
+msgstr ""
+
+#: /NewsEvents/index.ctp:38
+msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}"
+msgstr ""
+
+#: /NewsEvents/index.ctp:43
+msgid "previous"
+msgstr ""
+
+#: /NewsEvents/index.ctp:45
+msgid "next"
+msgstr ""
+
+#: /NewsEvents/index.ctp:52
+#: /NewsEvents/view.ctp:47
+msgid "New News Event"
+msgstr ""
+
+#: /NewsEvents/view.ctp:2
+msgid "News Event"
+msgstr ""
+
+#: /NewsEvents/view.ctp:4
+msgid "Id"
+msgstr ""
+
+#: /NewsEvents/view.ctp:9
+msgid "Description"
+msgstr ""
+
+#: /NewsEvents/view.ctp:14
+msgid "Content"
+msgstr ""
+
+#: /NewsEvents/view.ctp:19
+msgid "Author"
+msgstr ""
+
+#: /NewsEvents/view.ctp:24
+msgid "Publish"
+msgstr ""
+
+#: /NewsEvents/view.ctp:29
+msgid "Tone"
+msgstr ""
+
+#: /NewsEvents/view.ctp:34
+msgid "General"
+msgstr ""
+
+#: /NewsEvents/view.ctp:45
+msgid "Delete News Event"
+msgstr ""
+
