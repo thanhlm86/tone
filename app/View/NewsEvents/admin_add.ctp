@@ -1,20 +1,12 @@
+<div class="flat_area grid_16" style="opacity: 1;">
+    <h2>Form elements and controls</h2>
+
+    <p>Check out the Application like <a href="#">navigation</a>. Resize to see the liquid layout in action.
+        Expand/Collapse and sort boxes. Try out the WYSIWYGs.</p>
+</div>
 <div class="newsEvents form">
     <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
-    <?php echo $this->Form->create('NewsEvent', array('type' => 'file', 'autocomplete'=>"on")); ?>
-    <input type="email" name="email" autocomplete="off">
-    <!--    <fieldset>-->
-    <!--        <legend>--><?php //echo __('Admin Add News Event'); ?><!--</legend>-->
-    <!--        --><?php
-    //        echo $this->Form->textarea('description', array('class' => 'ckeditor'));
-    ////		echo $this->Form->input('description', array('label'=>'HEHE'));
-    ////		echo $this->Form->input('content');
-    //        echo $this->Form->textarea('content', array('class' => 'ckeditor'));
-    //		echo $this->Form->input('author');
-    //		echo $this->Form->input('publish');
-    //		echo $this->Form->input('tone');
-    //		echo $this->Form->input('general');
-    ?>
-    <!--    // TEST-->
+    <?php echo $this->Form->create('NewsEvent', array('type' => 'file', 'autocomplete' => "on")); ?>
     <div class="box grid_16" style="opacity: 1;">
         <h2 class="box_head">THÊM TIN TỨC</h2>
         <a href="#" class="grabber">&nbsp;</a>
@@ -46,20 +38,17 @@
 
                         <div>
                             <?php echo $this->Form->textarea('content', array('class' => 'ckeditor tooltip right text')); ?>
-
                             <div class="required_tag tooltip hover left" title="This field is required"></div>
                         </div>
                     </fieldset>
-
                 </div>
                 <div class="columns clearfix">
                     <div class="col_40">
-
                         <fieldset>
                             <label>Chọn ảnh cho bài tin</label>
 
                             <div>
-                                <?php echo $this->Form->input('image', array('type' => 'file', 'label'=>false)) ?>
+                                <?php echo $this->Form->input('image', array('type' => 'file', 'label' => false)) ?>
                             </div>
                         </fieldset>
                         <div class="columns clearfix">
@@ -68,7 +57,6 @@
                                     <label>Nguồn/ Tác giả</label>
 
                                     <div>
-                                        <!--                                        <input type="text" placeholder="Nhập nguồn của bài tin" class="text">-->
                                         <?php echo $this->Form->input('author', array('placeholder' => 'Nhập nguồn của bài tin', 'class' => 'text', 'label' => false)) ?>
                                     </div>
                                 </fieldset>
@@ -78,8 +66,6 @@
                                     <label>Trạng thái hiển thị</label>
 
                                     <div class="inline clearfix">
-                                        <!--                                        <label for="yes2b"><input type="checkbox" name="answer2b" id="yes2b">One</label>-->
-                                        <!--                                        <label for="no2b"><input type="checkbox" name="answer2b" id="no2b">Two</label>-->
                                         <?php
                                         echo $this->Form->input('publish', array('type' => 'checkbox', 'label' => 'Đăng trang chủ'));
                                         echo $this->Form->input('tone', array('type' => 'checkbox', 'label' => 'Tin của tone'));
@@ -90,48 +76,19 @@
                             </div>
                         </div>
                     </div>
-                    <!--                    <div class="col_60">-->
-                    <!--                        <fieldset>-->
-                    <!--                            <label>60% Width Column</label>-->
-                    <!---->
-                    <!--                            <div>-->
-                    <!--                                <input type="text" placeholder="Input is 66% column width">-->
-                    <!--                            </div>-->
-                    <!--                        </fieldset>-->
-                    <!--                    </div>-->
                 </div>
-
-
                 <div class="button_bar clearfix">
-                    <button class="green img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>Yes</span>
+                    <button type="submit" class="green img_icon has_text">
+                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?>
+                        <span>Thêm</span>
                     </button>
-                    <button class="red img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>No</span>
-                    </button>
-                    <button type="submit" class="grey send_right img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>Maybe</span>
+                    <button type="reset" class="red img_icon has_text">
+                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?>
+                        <span>Hủy</span>
                     </button>
                 </div>
             </div>
         </div>
 
     </div>
-
-
-    <!--    // END TEST-->
-
-    <!--    </fieldset>-->
     <?php echo $this->Form->end(); ?>
-<!--
-</div>
-<!--<div class="actions">-->
-<!--	<h3>--><?php //echo __('Actions'); ?><!--</h3>-->
-<!--	<ul>-->
-<!---->
-<!--		<li>--><?php //echo $this->Html->link(__('List News Events'), array('action' => 'index')); ?><!--</li>-->
-<!--	</ul>-->
-<!--</div>-->

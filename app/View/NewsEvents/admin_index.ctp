@@ -158,7 +158,7 @@ $stt++;
         }
         $.ajax({
             type: "POST",
-            url: "/tone.vn/admin/newsevents/status/" + id + "/" + ne_state,
+            url: "/tone/admin/newsevents/status/" + id + "/" + ne_state,
             success: function (data) {
                 $('#ajax' + id).html(data);
             }
