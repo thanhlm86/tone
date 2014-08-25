@@ -69,6 +69,7 @@
     <!-- Configuration Script -->
     <?php
     echo $this->Html->script('adminica/adminica_ui');
+    echo $this->Html->script('ckeditor/ckeditor');
     echo $this->Html->script('adminica/adminica_forms');
     echo $this->Html->script('adminica/adminica_mobile');
     ?>

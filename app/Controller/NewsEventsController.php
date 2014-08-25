@@ -110,10 +110,10 @@ class NewsEventsController extends AppController {
  * @return void
  */
 	public function admin_index() {
-        $this->Session->write('Config.language', 'eng');
-        echo $this->Session->read('Config.language');
-        $this->NewsEvent->recursive = 0;
-		$this->set('newsEvents', $this->Paginator->paginate());
+        $this->paginate['NewsEvent']['conditions'] = array(
+            'NewsEvent.publish' => 1
+        );
+		$this->set('newsEvents', $this->paginate());
 	}
 
 /**
