@@ -1,6 +1,11 @@
-<div class="newsEvents form">
+<div class="flat_area grid_16" style="opacity: 1;">
+    <h2>Form elements and controls</h2>
+
+    <p>Check out the Application like <a href="#">navigation</a>. Resize to see the liquid layout in action.
+        Expand/Collapse and sort boxes. Try out the WYSIWYGs.</p>
+</div>
+<div class="equipment form">
     <?php echo $this->Form->create('Equipment', array('type' => 'file', 'autocomplete'=>"on")); ?>
-    <input type="email" name="email" autocomplete="off">
     <div class="box grid_16" style="opacity: 1;">
         <h2 class="box_head">THÊM THIẾT BỊ</h2>
         <a href="#" class="grabber">&nbsp;</a>
@@ -68,17 +73,11 @@
 
 
                 <div class="button_bar clearfix">
-                    <button class="green img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>Yes</span>
+                    <button class="green img_icon has_text" type="submit">
+                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?> <span>Thêm</span>
                     </button>
-                    <button class="red img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>No</span>
-                    </button>
-                    <button type="submit" class="grey send_right img_icon has_text">
-                        <img src="/template_admin/img/icons/small/white/bended_arrow_right.png" alt="Bended Arrow Right"
-                             height="24" width="24"> <span>Maybe</span>
+                    <button class="red img_icon has_text" type="reset">
+                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?><span>Hủy</span>
                     </button>
                 </div>
             </div>

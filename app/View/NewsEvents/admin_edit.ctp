@@ -83,6 +83,11 @@
                                         echo $this->Form->input('publish', array('type' => 'checkbox', 'label' => 'Đăng trang chủ'));
                                         echo $this->Form->input('tone', array('type' => 'checkbox', 'label' => 'Tin của tone'));
                                         echo $this->Form->input('general', array('type' => 'checkbox', 'label' => 'Tin tổng hợp'));
+                                        echo $this->Form->input('new', array('type' => 'checkbox', 'label' => 'Tin mới'));
+                                        echo $this->Form->input('feature', array('type' => 'checkbox', 'label' => 'Tin nổi bật'));
+                                        echo $this->Form->input('special', array('type' => 'checkbox', 'label' => 'Tin đặc biệt'));
+
+
                                         ?>
                                     </div>
                                 </fieldset>

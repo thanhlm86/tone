@@ -8,5 +8,5 @@
  */
 class Equipment extends AppModel
 {
-
+public $useTable = 'equipments';
 }
