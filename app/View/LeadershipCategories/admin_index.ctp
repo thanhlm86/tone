@@ -2,7 +2,7 @@
 //debug($this->Paginator->params());
 ?>
 <div class="flat_area grid_16">
-    <h2><?php echo __('TIN TỨC') ?></h2>
+    <h2><?php echo __('BAN LÃNH ĐẠO') ?></h2>
 
     <p>Quản lý <strong>Bảng tin tức</strong> các thông tin, sửa xóa thêm tin tức của tone, hoặc tin tức chung tại nơi
         nay</p>
@@ -38,12 +38,12 @@
                                             class="DataTables_sort_icon css_right ui-icon ui-icon-triangle-1-n"></span>
                                     </div>
                                 </th>
-                                <th class="ui-state-default" rowspan="1" colspan="1" style="width: 220px;">
-                                    <div class="DataTables_sort_wrapper">Tên bài
+                                <th class="ui-state-default" rowspan="1" colspan="1" style="width: 500px;">
+                                    <div class="DataTables_sort_wrapper">Tên danh mục
                                     </div>
                                 </th>
-                                <th class="ui-state-default" rowspan="1" colspan="1" style="width: 500px;">
-                                    <div class="DataTables_sort_wrapper">Tóm tắt
+                                <th class="ui-state-default" rowspan="1" colspan="1" style="width: 100px;">
+                                    <div class="DataTables_sort_wrapper">Số thứ tự
                                     </div>
                                 </th>
                                 <th class="ui-state-default" rowspan="1" colspan="1" style="width: 70px;">
@@ -66,9 +66,9 @@
                             <th class="ui-state-default" rowspan="1" colspan="1"
                                 style="width: 50px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
                             <th class="ui-state-default" rowspan="1" colspan="1"
-                                style="width: 220px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
-                            <th class="ui-state-default" rowspan="1" colspan="1"
                                 style="width: 500px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
+                            <th class="ui-state-default" rowspan="1" colspan="1"
+                                style="width: 100px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
                             <th class="ui-state-default" rowspan="1" colspan="1"
                                 style="width: 70px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
                             <th class="ui-state-default" rowspan="1" colspan="1"
@@ -79,32 +79,20 @@
 
 
                         <tbody>
-                        <!--                        <tr class="gradeA odd">-->
-                        <!--                            <td>Gecko</td>-->
-                        <!--                            <td>Firefox 1.0</td>-->
-                        <!--                            <td>Win 98+ / OSX.2+</td>-->
-                        <!--                            <td class="center">1.7</td>-->
-                        <!--                            <td class="center">A</td>-->
-                        <!--                        </tr>-->
-                        <!--                        <tr class="gradeA even">-->
-                        <!--                            <td>Gecko</td>-->
-                        <!--                            <td>Firefox 1.5</td>-->
-                        <!--                            <td>Win 98+ / OSX.2+</td>-->
-                        <!--                            <td class="center">1.8</td>-->
-                        <!--                            <td class="center">A</td>-->
-                        <!--                        </tr>-->
                         <?php
                         $stt = 0;
-                        foreach ($newsEvents as $newsEvent):
+                        foreach ($leadershipCategories as $leadershipCategory):
                             $stt++;
                             ?>
                             <tr class="gradeA <?php if ($stt % 2 == 0) { ?>even<?php } else { ?>odd<?php } ?>">
                                 <td style="text-align: center; vertical-align: middle"><?php echo $stt; ?></td>
-                                <td style="vertical-align: middle"><?php echo $newsEvent['NewsEvent']['title'] ?></td>
-                                <td style="vertical-align: middle"><?php echo $newsEvent['NewsEvent']['description'] ?></td>
+                                <td style="vertical-align: middle">
+                                    <?php echo $this->Html->link($leadershipCategory['LeadershipCategory']['content'], array('action' => 'edit', $leadershipCategory['LeadershipCategory']['id'])); ?>
+                                </td>
+                                <td style="vertical-align: middle"><?php echo $leadershipCategory['LeadershipCategory']['number'] ?></td>
                                 <td style="text-align: center; vertical-align: middle"
-                                    id="ajax<?php echo $newsEvent['NewsEvent']['id'] ?>"><a
-                                        onclick="state(<?php echo $newsEvent['NewsEvent']['id']; ?>,<?php echo $newsEvent['NewsEvent']['publish']; ?>)"><?php if ($newsEvent['NewsEvent']['publish'] == 1) {
+                                    id="ajax<?php echo $leadershipCategory['LeadershipCategory']['id'] ?>"><a
+                                        onclick="state(<?php echo $leadershipCategory['LeadershipCategory']['id']; ?>,<?php echo $leadershipCategory['LeadershipCategory']['publish']; ?>)"><?php if ($leadershipCategory['LeadershipCategory']['publish'] == 1) {
                                             echo $this->Html->image('/img/on.png', array('alt' => 'Đăng'));
                                         } else {
                                             echo $this->Html->image('/img/off.png', array('alt' => 'Không đăng'));
@@ -112,7 +100,7 @@
                                 <!--                            <td style="text-align: center; vertical-align: middle">-->
                                 <?php //echo $this->Html->link('Edit', array('action' => 'edit', $newsEvent['NewsEvent']['id'])); ?><!--</td>-->
                                 <td style="text-align: center; vertical-align: middle"><?php
-                                    echo $this->Form->postLink('Delete', array('action' => 'delete', $newsEvent['NewsEvent']['id']),
+                                    echo $this->Form->postLink('Delete', array('action' => 'delete', $leadershipCategory['LeadershipCategory']['id']),
                                         array('confirm' => 'Are you sure?')
                                     );
                                     ?></td>
@@ -128,8 +116,11 @@
                 <div
                     class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers">
                     <span
-                        class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->first("First"); ?></span><span class="previous fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->prev(__('previous', true), array(), null, array('class' => 'disabled')); ?></span><span
-                            class="fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->numbers(); ?></span><span class="next fg-button ui-button ui-state-default"><?php echo $this->Paginator->next(__('next', true), array(), null, array('class' => 'disabled')); ?></span><span class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default"><?php echo $this->Paginator->last("Last"); ?></span>
+                        class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->first("First"); ?></span><span
+                        class="previous fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->prev(__('previous', true), array(), null, array('class' => 'disabled')); ?></span><span
+                        class="fg-button ui-button ui-state-default ui-state-disabled"><?php echo $this->Paginator->numbers(); ?></span><span
+                        class="next fg-button ui-button ui-state-default"><?php echo $this->Paginator->next(__('next', true), array(), null, array('class' => 'disabled')); ?></span><span
+                        class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default"><?php echo $this->Paginator->last("Last"); ?></span>
                 </div>
             </div>
         </div>
@@ -142,7 +133,8 @@
 //        echo $this->Paginator->counter(array(
 //            'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
 //        ));
-//        ?>
+//
+?>
 <!--    </p>-->
 <!---->
 <!--    <div class="paging">-->
@@ -162,7 +154,7 @@
         }
         $.ajax({
             type: "POST",
-            url: "/tone/admin/newsevents/status/" + id + "/" + ne_state,
+            url: "/tone/admin/leadershipcategories/status/" + id + "/" + ne_state,
             success: function (data) {
                 $('#ajax' + id).html(data);
             }

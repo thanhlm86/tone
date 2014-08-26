@@ -6,9 +6,9 @@
 </div>
 <div class="openLetters form">
     <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
-    <?php echo $this->Form->create('OpenLetter', array('type' => 'file')); ?>
+    <?php echo $this->Form->create('Introduction', array('type' => 'file')); ?>
     <div class="box grid_16" style="opacity: 1;">
-        <h2 class="box_head">THƯ NGỎ</h2>
+        <h2 class="box_head">LỜI GIỚI THIỆU</h2>
         <a href="#" class="grabber">&nbsp;</a>
         <a href="#" class="toggle">&nbsp;</a>
 
@@ -18,7 +18,7 @@
 
                 <div class="col_60">
                     <fieldset>
-                        <label>Thư ngỏ<span>Trường thông tin thư ngỏ</span></label>
+                        <label>Thư ngỏ<span>Trường lời giới thiệu</span></label>
 
                         <div class="clearfix">
                             <?php echo $this->Form->textarea('content', array('class' => 'tooltip autogrow textarea ckeditor', 'placeholder' => 'Bạn bắt buộc phải nội dung thư ngỏ', 'title' => 'This field keeps expanding, just like on Facebook')); ?>

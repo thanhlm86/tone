@@ -6,8 +6,6 @@
 
     <p>Quản lý <strong>Bảng tin tức</strong> các thông tin, sửa xóa thêm tin tức của tone, hoặc tin tức chung tại nơi
         nay</p>
-
-    <!--    <p>Try it out and you'll see how <strong>powerful yet easy to use</strong> it is.</p>-->
 </div>
 <?php
 ?>
@@ -73,26 +71,9 @@
                                 style="width: 70px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
                             <th class="ui-state-default" rowspan="1" colspan="1"
                                 style="width: 70px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"></th>
-
                         </tr>
                         </thead>
-
-
                         <tbody>
-                        <!--                        <tr class="gradeA odd">-->
-                        <!--                            <td>Gecko</td>-->
-                        <!--                            <td>Firefox 1.0</td>-->
-                        <!--                            <td>Win 98+ / OSX.2+</td>-->
-                        <!--                            <td class="center">1.7</td>-->
-                        <!--                            <td class="center">A</td>-->
-                        <!--                        </tr>-->
-                        <!--                        <tr class="gradeA even">-->
-                        <!--                            <td>Gecko</td>-->
-                        <!--                            <td>Firefox 1.5</td>-->
-                        <!--                            <td>Win 98+ / OSX.2+</td>-->
-                        <!--                            <td class="center">1.8</td>-->
-                        <!--                            <td class="center">A</td>-->
-                        <!--                        </tr>-->
                         <?php
                         $stt = 0;
                         foreach ($newsEvents as $newsEvent):
@@ -100,7 +81,9 @@
                             ?>
                             <tr class="gradeA <?php if ($stt % 2 == 0) { ?>even<?php } else { ?>odd<?php } ?>">
                                 <td style="text-align: center; vertical-align: middle"><?php echo $stt; ?></td>
-                                <td style="vertical-align: middle"><?php echo $newsEvent['NewsEvent']['title'] ?></td>
+                                <td style="vertical-align: middle">
+                                    <?php echo $this->Html->link($newsEvent['NewsEvent']['title'], array('action' => 'edit', $newsEvent['NewsEvent']['id'])); ?>
+                                </td>
                                 <td style="vertical-align: middle"><?php echo $newsEvent['NewsEvent']['description'] ?></td>
                                 <td style="text-align: center; vertical-align: middle"
                                     id="ajax<?php echo $newsEvent['NewsEvent']['id'] ?>"><a
@@ -135,6 +118,23 @@
         </div>
     </div>
 </div>
+<!--<div id="pagination">-->
+<!--    <p>-->
+<!--        --><?php
+//
+//        echo $this->Paginator->counter(array(
+//            'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
+//        ));
+//        ?>
+<!--    </p>-->
+<!---->
+<!--    <div class="paging">-->
+<!--        --><?php //echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+<!--        |  --><?php //echo $this->Paginator->numbers();?>
+<!--        |-->
+<!--        --><?php //echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+<!--    </div>-->
+<!--</div>-->
 <script>
     function state(id, ne_state) {
         if (ne_state == 1) {

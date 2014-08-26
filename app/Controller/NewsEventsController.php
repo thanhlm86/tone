@@ -110,9 +110,7 @@ class NewsEventsController extends AppController {
  * @return void
  */
 	public function admin_index() {
-        $this->paginate['NewsEvent']['conditions'] = array(
-            'NewsEvent.publish' => 1
-        );
+        $this->NewsEvent->recursive = 0;
 		$this->set('newsEvents', $this->paginate());
 	}
 
@@ -217,13 +215,13 @@ class NewsEventsController extends AppController {
 	}
     public function admin_status($id = null, $publish = null)
     {
-        $categoryproduct = $this->CategoryProduct->findById($id);
-        $categoryproduct['CategoryProduct']['publish'] = $publish;
-        $this->CategoryProduct->save($categoryproduct);
+        $newsEvent = $this->NewsEvent->findById($id);
+        $newsEvent['NewsEvent']['publish'] = $publish;
+        $this->NewsEvent->save($newsEvent);
         if ($publish == 1) {
-            echo '<a onclick="state(' . $categoryproduct['CategoryProduct']['id'] . ',1)"><img src="/tvshopping/img/circle_green.png"/>';
+            echo '<a onclick="state(' . $newsEvent['NewsEvent']['id'] . ',1)"><img src="/tone/img/on.png"/>';
         } else {
-            echo '<a onclick="state(' . $categoryproduct['CategoryProduct']['id'] . ',0)"><img src="/tvshopping/img/circle_red.png"/>';
+            echo '<a onclick="state(' . $newsEvent['NewsEvent']['id'] . ',0)"><img src="/tone/img/off.png"/>';
         }
         $this->autoRender = false; //  nó không redirect đi đâu cả
 

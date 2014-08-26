@@ -33,22 +33,25 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller
 {
     var $paginate = array(
-        'NewsEvent'=>array(
-            'limit' => 10,
+        'NewsEvent' => array(
+            'limit' => 1,
             'order' => array(
                 'NewsEvent.title' => 'asc'
             )),
-        'Comment'=>array(
+        'Comment' => array(
             'limit' => 10,
             'order' => array(
                 'Comment.created' => 'desc'
             ))
 
     );
+
     function beforeFilter()
     {
         if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
             $this->layout = 'admin';
         }
+
+
     }
 }
