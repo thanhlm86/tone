@@ -81,18 +81,18 @@
                         <tbody>
                         <?php
                         $stt = 0;
-                        foreach ($leadershipCategories as $leadershipCategory):
+                        foreach ($leaderships as $leadership):
                             $stt++;
                             ?>
                             <tr class="gradeA <?php if ($stt % 2 == 0) { ?>even<?php } else { ?>odd<?php } ?>">
                                 <td style="text-align: center; vertical-align: middle"><?php echo $stt; ?></td>
                                 <td style="vertical-align: middle">
-                                    <?php echo $this->Html->link($leadershipCategory['LeadershipCategory']['content'], array('action' => 'edit', $leadershipCategory['LeadershipCategory']['id'])); ?>
+                                    <?php echo $this->Html->link($leadership['Leadership']['name'], array('action' => 'edit', $leadership['Leadership']['id'])); ?>
                                 </td>
-                                <td style="vertical-align: middle"><?php echo $leadershipCategory['LeadershipCategory']['number'] ?></td>
+                                <td style="vertical-align: middle"><?php echo $leadership['Leadership']['number'] ?></td>
                                 <td style="text-align: center; vertical-align: middle"
-                                    id="ajax<?php echo $leadershipCategory['LeadershipCategory']['id'] ?>"><a
-                                        onclick="state(<?php echo $leadershipCategory['LeadershipCategory']['id']; ?>,<?php echo $leadershipCategory['LeadershipCategory']['publish']; ?>)"><?php if ($leadershipCategory['LeadershipCategory']['publish'] == 1) {
+                                    id="ajax<?php echo $leadership['Leadership']['id'] ?>"><a
+                                        onclick="state(<?php echo $leadership['Leadership']['id']; ?>,<?php echo $leadership['Leadership']['publish']; ?>)"><?php if ($leadership['Leadership']['publish'] == 1) {
                                             echo $this->Html->image('/img/on.png', array('alt' => 'Đăng'));
                                         } else {
                                             echo $this->Html->image('/img/off.png', array('alt' => 'Không đăng'));
@@ -100,7 +100,7 @@
                                 <!--                            <td style="text-align: center; vertical-align: middle">-->
                                 <?php //echo $this->Html->link('Edit', array('action' => 'edit', $newsEvent['NewsEvent']['id'])); ?><!--</td>-->
                                 <td style="text-align: center; vertical-align: middle"><?php
-                                    echo $this->Form->postLink('Delete', array('action' => 'delete', $leadershipCategory['LeadershipCategory']['id']),
+                                    echo $this->Form->postLink('Delete', array('action' => 'delete', $leadership['Leadership']['id']),
                                         array('confirm' => 'Are you sure?')
                                     );
                                     ?></td>
@@ -126,24 +126,6 @@
         </div>
     </div>
 </div>
-<!--<div id="pagination">-->
-<!--    <p>-->
-<!--        --><?php
-//
-//        echo $this->Paginator->counter(array(
-//            'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
-//        ));
-//
-?>
-<!--    </p>-->
-<!---->
-<!--    <div class="paging">-->
-<!--        --><?php //echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
-<!--        |  --><?php //echo $this->Paginator->numbers();?>
-<!--        |-->
-<!--        --><?php //echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
-<!--    </div>-->
-<!--</div>-->
 <script>
     function state(id, ne_state) {
         if (ne_state == 1) {
@@ -154,7 +136,7 @@
         }
         $.ajax({
             type: "POST",
-            url: "/tone/admin/leadershipcategories/status/" + id + "/" + ne_state,
+            url: "/tone/admin/leaderships/status/" + id + "/" + ne_state,
             success: function (data) {
                 $('#ajax' + id).html(data);
             }

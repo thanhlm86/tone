@@ -4,10 +4,11 @@
     <p>Check out the Application like <a href="#">navigation</a>. Resize to see the liquid layout in action.
         Expand/Collapse and sort boxes. Try out the WYSIWYGs.</p>
 </div>
-<div class="leadershipCategories form">
-    <?php echo $this->Form->create('LeadershipCategory'); ?>
+<div class="leadership form">
+    <?php echo $this->Html->script('ckeditor/ckeditor'); ?>
+    <?php echo $this->Form->create('Leadership'); ?>
     <div class="box grid_16" style="opacity: 1;">
-        <h2 class="box_head">DANH MỤC LÃNH ĐẠO</h2>
+        <h2 class="box_head">LÃNH ĐẠO</h2>
         <a href="#" class="grabber">&nbsp;</a>
         <a href="#" class="toggle">&nbsp;</a>
 
@@ -16,11 +17,21 @@
                 <h2 class="section">Text Fields</h2>
 
                 <div class="col_60">
+                    <div>
+                        <fieldset>
+                            <label>Nhập danh mục lãnh đạo</label>
+
+                            <div>
+                                <?php echo $this->Form->textarea('name', array('placeholder' => 'Nhập danh mục lãnh đạo', 'class' => 'text', 'label' => false)) ?>
+                                <div class="required_tag tooltip hover left" title="This field is required"></div>
+                            </div>
+                        </fieldset>
+                    </div>
                     <fieldset>
-                        <label>Danh mục ban lãnh đạo<span>Tên danh mục</span></label>
+                        <label>Lãnh đạo<span>Tên lãnh đạo</span></label>
 
                         <div class="clearfix">
-                            <?php echo $this->Form->input('content', array('placeholder' => 'Nhập tên danh mục', 'class' => 'text', 'label' => false)) ?>
+                            <?php echo $this->Form->textarea('content', array('placeholder' => 'Nhập tên lãnh đạo', 'class' => 'text ckeditor', 'label' => false)) ?>
                             <div class="required_tag tooltip hover left" title="This field is required"></div>
                         </div>
                     </fieldset>
@@ -28,10 +39,10 @@
                 <div class="columns clearfix">
                     <div class="col_40">
                         <div class="columns clearfix">
+
                             <div>
                                 <fieldset>
-                                    <label>Số thứ tự tác giả</label>
-
+                                    <label>Số thứ tự trang chủ</label>
                                     <div>
                                         <?php echo $this->Form->input('number', array('placeholder' => 'Số thứ tự hiển thị trang chủ', 'class' => 'text', 'label' => false)) ?>
                                         <div class="required_tag tooltip hover left" title="This field is required"></div>
@@ -57,7 +68,7 @@
                 <div class="button_bar clearfix">
                     <button type="submit" class="green img_icon has_text">
                         <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?>
-                        <span>Sửa</span>
+                        <span>Lưu</span>
                     </button>
                     <button type="reset" class="red img_icon has_text">
                         <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?>
