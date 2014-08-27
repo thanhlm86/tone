@@ -1,11 +1,11 @@
 <div class="flat_area grid_16" style="opacity: 1;">
-    <h2>Form elements and controls</h2>
+    <h2>Equipment</h2>
 
     <p>Check out the Application like <a href="#">navigation</a>. Resize to see the liquid layout in action.
         Expand/Collapse and sort boxes. Try out the WYSIWYGs.</p>
 </div>
 <div class="equipment form">
-    <?php echo $this->Form->create('Equipment', array('type' => 'file', 'autocomplete'=>"on")); ?>
+    <?php echo $this->Form->create('Equipment', array('type' => 'file')); ?>
     <div class="box grid_16" style="opacity: 1;">
         <h2 class="box_head">THÊM THIẾT BỊ</h2>
         <a href="#" class="grabber">&nbsp;</a>
@@ -17,18 +17,18 @@
 
                 <div class="col_60">
                     <fieldset>
-                        <label>Tên bài<span>Tên của bài tin</span></label>
+                        <label>Tên thiết bị<span>Tên của thiết bị</span></label>
 
                         <div class="clearfix">
-                            <?php echo $this->Form->input('name', array('placeholder' => 'Nhập tên của bài tin', 'class' => 'text', 'label' => false)) ?>
+                            <?php echo $this->Form->input('name', array('placeholder' => 'Nhập tên thiết bị', 'class' => 'text', 'label' => false)) ?>
                             <div class="required_tag tooltip hover left" title="This field is required"></div>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <label>Tên bài<span>Tên của bài tin</span></label>
+                        <label>Tính năng<span>Tính năng của thiết bị</span></label>
 
                         <div class="clearfix">
-                            <?php echo $this->Form->input('features', array('placeholder' => 'Nhập tên của bài tin', 'class' => 'text', 'label' => false)) ?>
+                            <?php echo $this->Form->input('features', array('placeholder' => 'Nhập tính năng của thiết bị', 'class' => 'text', 'label' => false)) ?>
                             <div class="required_tag tooltip hover left" title="This field is required"></div>
                         </div>
                     </fieldset>
@@ -37,7 +37,7 @@
                     <div class="col_40">
 
                         <fieldset>
-                            <label>Chọn ảnh cho bài tin</label>
+                            <label>Tập tin </label>
 
                             <div>
                                 <?php echo $this->Form->input('file', array('type' => 'file', 'label'=>false)) ?>
@@ -46,11 +46,11 @@
                         <div class="columns clearfix">
                             <div>
                                 <fieldset>
-                                    <label>Nguồn/ Tác giả</label>
+                                    <label>Nước sản xuất</label>
 
                                     <div>
                                         <!--                                        <input type="text" placeholder="Nhập nguồn của bài tin" class="text">-->
-                                        <?php echo $this->Form->input('production', array('placeholder' => 'Nhập nguồn của bài tin', 'class' => 'text', 'label' => false)) ?>
+                                        <?php echo $this->Form->input('production', array('placeholder' => 'Nhập nước sản xuất', 'class' => 'text', 'label' => false)) ?>
                                     </div>
                                 </fieldset>
                             </div>
@@ -62,7 +62,7 @@
                                         <!--                                        <label for="yes2b"><input type="checkbox" name="answer2b" id="yes2b">One</label>-->
                                         <!--                                        <label for="no2b"><input type="checkbox" name="answer2b" id="no2b">Two</label>-->
                                         <?php
-                                        echo $this->Form->input('status', array('type' => 'checkbox', 'label' => 'Đăng trang chủ'));
+                                        echo $this->Form->input('status', array('type' => 'checkbox', 'label' => 'Đăng'));
                                         ?>
                                     </div>
                                 </fieldset>
@@ -74,10 +74,10 @@
 
                 <div class="button_bar clearfix">
                     <button class="green img_icon has_text" type="submit">
-                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?> <span>Thêm</span>
+                        <span>Thêm</span>
                     </button>
                     <button class="red img_icon has_text" type="reset">
-                        <?php echo $this->Html->image('icons/small/white/bended_arrow_right.png', array('alt' => 'Bended Arrow Right', 'height' => '24', 'width' => '24')) ?><span>Hủy</span>
+                        <span>Hủy</span>
                     </button>
                 </div>
             </div>

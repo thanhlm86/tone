@@ -21,6 +21,10 @@ class EquipmentsController extends AppController
     {
         if ($this->request->is('post')) {
             $this->Equipment->Create();
+            if ($this->request->data['Equipment']['file'] != "") {
+                move_uploaded_file($this->request->data['Equipment']['file']['tmp_name'], FILES . 'upload' . DS . $this->request->data['Equipment']['file']['name']);
+            }
+            $this->request->data['Equipment']['file'] = $this->request->data['Equipment']['file']['name'];
             if ($this->Equiment->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been saved.'));
                 return $this->redirect(array('action' => 'index'));
